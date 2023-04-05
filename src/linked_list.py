@@ -25,18 +25,17 @@ class LinkedList:
         if self.head is None:  # list is empty
             self.add_front(value)
         else:
-            # curr_node = self.head
-            # while curr_node.next is not None:
-            #     curr_node = curr_node.next
             self.tail.next = new_node
             self.tail = new_node
     
     def delete_front(self):
+        val = self.head.value
         if self.head is not None:
             self.head = self.head.next
         elif self.head.next is None:
             self.head = None
             self.tail = None
+        return val
     
     def delete_back(self):
         curr_node = self.head
@@ -47,14 +46,11 @@ class LinkedList:
                 curr_node = curr_node.next
             self.tail = curr_node
             self.tail.next = None
-            # while curr_node.next.next is not None:
-            #     curr_node = curr_node.next
-            # curr_node.next = None
     
     def print_list(self):
         curr_node = self.head
         while curr_node is not None:
-            print(curr_node.value + ' -> ', end='')
+            print(str(curr_node.value) + ' -> ', end='')
             curr_node = curr_node.next
         print()
 
