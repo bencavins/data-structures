@@ -15,25 +15,28 @@ class BinarySearchTree:
         self.root = None
     
     def print_dfs(self):
-        """In order"""
+        """In order traversal"""
         def traverse(root):
+            # process the left branch
             if root.left:
                 traverse(root.left)
+            # print the current value
             print(root.value)
-            # if root.right:
-            # traverse(root.right)
+            # proccess the right branch
+            if root.right:
+                traverse(root.right)    
         traverse(self.root)
         
     def print_bfs(self):
         q = Queue()
-        q.enqueue(self.root)
+        q.enqueue(self.root) # first node in our queue is the root
         while q._data.head is not None:  # while q is not empty
-            curr = q.dequeue()
+            curr = q.dequeue() # grab the next node in the queue
             print(curr.value)
             if curr.left:
-                q.enqueue(curr.left)
+                q.enqueue(curr.left) # add the left node to the queue
             if curr.right:
-                q.enqueue(curr.right)
+                q.enqueue(curr.right) # add the right node to the queue
     
 
 t = BinarySearchTree()
