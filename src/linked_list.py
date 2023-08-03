@@ -56,7 +56,10 @@ class LinkedList:
     # O(n)
     def index(self, i):
         pass
-    
+
+    def is_empty(self):
+        return self.head is None
+
     def print_list(self):
         current_node = self.head
         while current_node is not None:

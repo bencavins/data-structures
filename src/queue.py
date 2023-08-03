@@ -12,3 +12,6 @@ class Queue:
     # O(1)
     def dequeue(self):
         return self._data.delete_front()
+    
+    def is_empty(self):
+        return self._data.is_empty()
